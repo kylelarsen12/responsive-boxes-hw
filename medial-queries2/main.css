@@ -7,6 +7,7 @@ body {
   border: 1px solid teal;
 }
 
+/*Mobile css*/
 .container {
   display: flex;
   min-height: 100vh;
@@ -14,22 +15,74 @@ body {
   justify-content: space-between;
 }
 
-.a,
-.c,
-.d,
-.e,
-.f {
-  flex-grow: 1;
-}
-
-.b {
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   flex-grow: 3;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70vh;
 }
 
-.c,
-.d,
-.e {
+header,
+footer,
+aside {
+  flex-grow: 1;
+  margin: 0.5em;
+}
+
+main {
+  flex-grow: 3;
+  margin: 0.5em;
+  min-width: 100%;
+}
+
+aside {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 32%;
+  min-width: 100%;
+  justify-content: space-between;
+  margin: 0.5em;
+}
+
+aside div {
+  flex-grow: 10;
+  margin: 0.25em;
+}
+
+/*Desktop css*/
+@media (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header {
+    width: 100%;
+    min-height: 15vh;
+  }
+
+  .wrapper {
+    justify-content: stretch;
+    flex-basis: 70%;
+    min-height: 75vh;
+    margin: 0.5em;
+  }
+
+  main {
+    min-width: 99%;
+  }
+
+  aside {
+    min-width: 99%;
+  }
+
+  footer {
+    min-height: 75vh;
+    flex-grow: 3;
+    margin: 0.5em;
+  }
 }
